@@ -1,0 +1,357 @@
+@font-face {
+  font-family: 'KronaOne';
+  src: url('../fonts/KronaOne-Regular.ttf') format('truetype');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #02070f;
+}
+
+body {
+  justify-content: flex-start;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 125px;
+}
+#popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75); /* Dark overlay */
+  display: flex; /* Make this flex by default */
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Make container visible */
+  visibility: visible; /* Show the container immediately */
+  backdrop-filter: blur(5px); /* Blur effect for the background */
+  z-index: 100; /* Ensure it is above other content */
+}
+
+/* Show the pop-up container */
+#popup-container.show {
+  opacity: 1; /* Make container visible */
+  visibility: visible; /* Show the container */
+  z-index: 100;
+}
+
+/* Pop-up styling to match the card's style */
+#popup {
+  background: #0a0f24; /* Dark blue background */
+  padding: 20px;
+  border-radius: 30px;
+  border: 5px solid #00DEAE; /* Neon-like border color */
+  box-shadow: 0 0 5px #00DEAE;
+  color: white; /* Text color */
+  font-family: 'Arial', sans-serif; /* Update with the actual font you're using */
+  text-align: center; /* Centered text */
+  width: 80%; /* Adjust as needed */
+  max-width: 400px; /* Maximum width */
+  transform: translateY(100vh); /* Start off screen */
+  transition: transform 0.4s ease-out; /* Smooth slide-in effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popUpImg{
+  display: flex;
+  flex-direction: row;
+}
+
+h2{
+  font-family: KronaOne;
+  font-size: 20px;
+}
+
+/* Slide-in effect for the pop-up */
+#popup-container.show #popup {
+  transform: translateY(245px); /* Slide-in to final position */
+}
+
+/* Style for the close button */
+#close-popup {
+  color: white; /* Close button color */
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 28px; /* Adjust as needed */
+  transition: color 0.2s, transform 0.3s ease; /* Apply transition to color and transform */
+}
+
+#close-popup:hover {
+  transform: rotate(90deg); /* Apply rotation */
+  color: #00DEAE; /* Neon color on hover */
+}
+
+
+/* Style for language selection buttons */
+#popup img {
+  width: 65px;
+  height: 45px;
+  
+}
+
+
+#popup button:hover {
+  transform: scale(1.05); /* Slight increase in size on hover */
+}
+
+.image {
+  width: 70%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; /* Ensures the border is above the card */
+  box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 1);
+  position: absolute;
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  position: relative;
+  margin: 20px 0;
+}
+
+/* Add this to your styles.css file */
+.container-clicked .card, .container-clicked .button {
+  animation: clickAnimation 0.3s ease;
+}
+
+/* Button Click Animation */
+.button-clicked {
+  animation: ClickAnimation 0.3s ease;
+}
+
+@keyframes buttonClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9); /* Slightly smaller for a button press effect */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes clickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.patreon, .only {
+  max-width: 375px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.button-link {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  width: 70%;
+}
+
+.button {
+  width: 100%;
+  height: auto;
+}
+
+/* Click Animation */
+.click-animation {
+  animation: clickEffect 0.3s ease;
+}
+
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95); /* Slightly smaller for a button press effect */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 340px){
+  #popup{
+    height: 200px;
+  }
+
+  h2{
+    font-size: 29px;
+    margin-top: 1%;
+    
+  }
+  .popUpImg{
+    margin-top: 5%;
+  }
+
+  #popup img {
+    width: 100px;
+    height: 60px;
+    margin-bottom: -5%;
+  }
+
+  #close-popup{
+    font-size: 40px;
+  }
+
+  #popup-container.show #popup {
+    transform: translateY(332px); /* Slide-in to final position */
+  }
+}
+
+
+@media screen and (min-width: 728px) {
+  header {
+    height: 200px;
+  }
+
+  .image {
+    width: 50%;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0;
+  }
+
+  #popup-container.show #popup {
+    transform: translateY(385px); /* Slide-in to final position */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+    .image{
+        width:50%;
+    }
+
+    
+
+    .button-link {
+      position: absolute;
+      bottom: 12%; /* Decreased from 20% to move the button 5% down */
+      left: 50%;
+      transform: translateX(-50%);
+      text-decoration: none;
+      width: 70%;
+    }
+
+    .card-container {
+      overflow: hidden; /* This ensures anything outside the container is not shown */
+      position: relative; /* Needed for proper positioning of the absolute elements inside */
+      width: 350px; /* Set the width to match your image */
+      height: 250px; /* Set the height to match your image */
+      border-radius: 30px;
+      transition: transform 0.3s ease;
+    }
+    
+    .card-container img {
+      width: 100%; /* This will make your image fill the container's width */
+      height: auto; /* This will maintain the aspect ratio of the image */
+      display: block; /* This removes any extra space beneath the image */
+    }
+    
+    
+    #mouse-glow {
+      pointer-events: none;
+      position: fixed; /* Use fixed to ensure it follows the mouse globally */
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      transition: opacity 0.3s, transform 0.3s; /* Smooth transition for moving and showing/hiding */
+      opacity: 0; /* Initially hidden */
+      z-index: 10; /* Ensure it's above other elements */
+  }
+  .blue-glow {
+      background: radial-gradient(circle closest-side, rgba(0, 222, 174, 0.7) 5%, transparent);
+  }
+  .purple-glow {
+      background: radial-gradient(circle closest-side, rgba(221, 0, 255, 0.7) 5%, transparent);
+  }
+  
+  .click-animation {
+    animation: clickEffect 300ms ease;
+}
+
+@keyframes clickEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+#popup-container.show #popup {
+  transform: translateY(235px); /* Slide-in to final position */
+}
+
+#popup img:hover {
+  transform: scale(1.05);
+}
+
+}

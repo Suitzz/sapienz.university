@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapienz</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/img/sapienz-logo.png">
+    
+
+</head>
+<body>
+    <div id="popup-container" style="display:none;">
+        <!-- Pop-up -->
+        <div id="popup">
+            <!-- Close Button -->
+            <span id="close-popup" style="cursor:pointer;">&times;</span>
+            <h2>Select Language</h2>
+            <div class="popUpImg">
+                <!-- Images for Languages -->
+                <img src="/assets/img/USA Flag Button.png" onclick="changeLanguage('EN')" style="cursor: pointer; margin: 5px;" alt="EN">
+                <img src="/assets/img/Portugal Flag Button.png" onclick="changeLanguage('PT')" style="cursor: pointer; margin: 5px;" alt="PT">
+                <img src="/assets/img/Spain Flag Button.png" onclick="changeLanguage('ES')" style="cursor: pointer; margin: 5px;" alt="ES">
+            </div>
+        </div>
+    </div>
+    <header>
+        <img src="assets/img/sapienzmain.png" alt="Sapienz" class="image">
+    </header>
+    <div class="container">
+        <div class="card-container patreon" data-href="https://www.patreon.com/sapienz_tuga">
+            <img src="/assets/img/Sapienz 1st Page Patreon Border.png" class="card-border" alt="">
+            <img id="patreonCard" class="card" src="/assets/img/Sapienz 1st Page Patreon Card.png" alt="Patreon Card">
+            <a href="https://www.patreon.com/sapienz_tuga" target="_blank" class="button-link">
+                <img id="patreonButton" class="button" src="/assets/img/Button Patreon Sapienz EN.png">
+            </a>
+        </div>
+        <div class="card-container patreon" data-href="https://onlyfans.com/sapienz">
+            <img src="/assets/img/Sapienz 1st Page Only Border.png" class="card-border" alt="">
+            <img id="onlyFansCard" class="card" src="/assets/img/Sapienz 1st Page Only Card.png" alt="OnlyFans Card">
+            <a href="https://onlyfans.com/sapienz" target="_blank" class="button-link">
+                <img id="onlyFansButton" class="button" src="/assets/img/Button Onlyfans Sapienz EN.png">
+            </a>
+        </div>
+    </div>
+    <!-- Glow effect container -->
+    <div id="mouse-glow"></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
